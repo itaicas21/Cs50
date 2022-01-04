@@ -79,19 +79,3 @@ def longest_match(sequence, subsequence):
 
 
 main()
-
-
-        # for j in person:
-        #     if(j[:index]!=tempstr):
-        #         if len(tempstr) == len(j):
-        #             person[j]+=1
-        #             flag=True
-        #         else:
-        #             flag=False
-        #     else:
-        #         flag=True
-        # if flag == True:
-        #     index=0
-        #     tempstr=sequence[i]
-        # else:
-        #     index+=1
