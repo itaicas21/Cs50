@@ -22,8 +22,6 @@ def main():
         if field=='name':
             continue
         person[field]=0
-    tempstr=""
-    flag=None
     for field in person:
         person[field] = longest_match(sequence,field)
 
