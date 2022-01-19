@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+   <table>
+        <tr>
+            {% for key in result %}
+            <th>{{key.capitalize()}}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for key in result %}
+            <td>{{result[key]}}</td>
+            {% endfor %}
+        </tr>
+    </table>
+{% endblock %}

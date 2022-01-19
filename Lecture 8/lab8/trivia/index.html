@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Trivia!</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <h2>Part 1: Multiple Choice</h2>
+        <hr />
+        <h3>What is the capital of Israel?</h3>
+        <hr />
+        <button class="multiple">Jerusalem</button>
+        <button class="multiple">Tel Aviv</button>
+        <button class="multiple">Modiin</button>
+        <div class="resultOne"></div>
+      </div>
+
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr />
+        <h3>What is your name?</h3>
+        <input type="text" id="name" />
+        <button id="check">Submit</button>
+        <div class="resultTwo"></div>
+      </div>
+    </div>
+    <script>
+      let resultOne = document.querySelector(".resultOne");
+      document.querySelectorAll(".multiple").forEach((button) => {
+        button.addEventListener("click", (e) => {
+          if (e.target.innerText == "Jerusalem") {
+            e.target.style.backgroundColor = "green";
+            resultOne.innerText = "Correct";
+          } else {
+            e.target.style.backgroundColor = "red";
+            resultOne.innerText = "Incorrect";
+          }
+        });
+      });
+      let resultTwo = document.querySelector(".resultTwo");
+      document
+        .querySelector("#check")
+        .addEventListener("click", (e) => {
+          let input = document.querySelector("#name");
+          if (input.value == "Cassuto") {
+            resultTwo.innerText = "Correct";
+          } else resultTwo.innerText = "Incorrect";
+        });
+    </script>
+  </body>
+</html>

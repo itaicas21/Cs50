@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h2>Transaction History</h2>
+    <table>
+        {%for transaction in history %}
+            {% if loop.index == 1 %}
+            <tr>
+                {% for field in transaction %}
+                    {% if field != "id" and field !="inquirer_id" %}
+                        <th>{{field}}</th>
+                    {% endif %}
+                {%endfor%}
+            </tr>
+            {%else%}
+            <tr>
+                {% for field in transaction%}
+                    {% if field !="id" and field!="inquirer_id" %}
+                        <td>{{transaction[field]}}</td>
+                    {% endif %}
+                {%endfor%}
+            </tr>
+            {% endif %}
+        {%endfor%}
+    </table>
+{% endblock %}

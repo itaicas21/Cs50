@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+   <h2>Buy Stock</h2>
+   <form method="POST" action="/buy">
+       <input type="text" name="symbol" id="symbol" placeholder="Stock Symbol">
+       <input type="text" name="shares" id="shares" placeholder="Number of Shares">
+       <button type="submit">Buy</button>
+   </form>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Stock</th>
+            <th>Shares</th>
+            <th>Share Price</th>
+            <th>Holding Value</th>
+            <th>Balance</th>
+            <th>Total Assets</th>
+        </tr>
+        {%for stock in stocks_held %}
+            <tr>
+                <td>{{stock['stock']}}</td>
+                <td>{{stock['shares']}}</td>
+                {% set holding_value = current_prices[loop.index-1]*stock['shares'] %}
+                <td>{{current_prices[loop.index-1]}}</td>
+                <td>{{holding_value|round(2,'floor')}}</td>
+            </tr>
+            {%endfor%}
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>{{balance}}</td>
+                {% set total = projected_sell+balance %}
+                <td>{{total|round(2,'floor')}}</td>
+            </tr>
+    </table>
+{% endblock %}
