@@ -1,3 +1,18 @@
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+#survey-form{
+  border: 10px solid hsl(196deg 40% 25%);
+  border-radius:10px;
+  width:70%;
+  margin:auto;
+}
+#submit{
+  margin:auto;
+}
 .navbar {
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
